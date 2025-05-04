@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+.container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.audio-list {
+    width: 30%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.audio-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.audio-item {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.audio-item:hover {
+    background: rgba(200, 150, 250, 0.4);
+    transform: scale(1.05);
+}
+
+.display-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-area img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+
+.image-area img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.dedicace-area {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Animation bulles et étoiles */
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: rise 20s infinite ease-in;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(-1200px) translateX(300px); opacity: 0; }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: twinkle 2s infinite alternate;
+    border-radius: 50%;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
