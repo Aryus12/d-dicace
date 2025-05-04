@@ -22,13 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Gestion de l'image
     $imageName = $_FILES['images']['name'];
     $imageTmp = $_FILES['images']['tmp_name'];
-    $uploadPath = "imaged/" . basename($imageName);
+    $uploadPath = "uploads/" . basename($imageName);
     move_uploaded_file($imageTmp, $uploadPath);
 
     // Gestion de l'audio
     $nom_audio = $_FILES['audio']['name'];
     $audioTmp = $_FILES['audio']['tmp_name'];
-    $uploadAudioPath = "audios/" . basename($nom_audio); // Crée un dossier "audios/" pour stocker
+    $uploadAudioPath = "uploads/" . basename($nom_audio); // Crée un dossier "audios/" pour stocker
     move_uploaded_file($audioTmp, $uploadAudioPath);
 
     // Insertion dans la base de données
